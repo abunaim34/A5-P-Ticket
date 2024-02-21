@@ -170,10 +170,10 @@
                         <div class="flex items-center mt-6 inter-uniquifier">
                             <p class="font-medium pr-4">B</p>
                             <div class="flex justify-between gap-8">
-                                <h1 class="seats bg-[#F7F8F8] py-4 px-10 rounded-xl">B1</h1>
-                                <h1 class="seats bg-[#F7F8F8] py-4 px-10 rounded-xl mr-10">B2</h1>
-                                <h1 class="seats bg-[#F7F8F8] py-4 px-10 rounded-xl">B3</h1>
-                                <h1 class="seats bg-[#F7F8F8] py-4 px-10 rounded-xl">B4</h1>
+                                <h1  class="seats bg-[#F7F8F8] py-4 px-10 rounded-xl">B1</h1>
+                                <h1  class="seats bg-[#F7F8F8] py-4 px-10 rounded-xl mr-10">B2</h1>
+                                <h1  class="seats bg-[#F7F8F8] py-4 px-10 rounded-xl">B3</h1>
+                                <h1  class="seats bg-[#F7F8F8] py-4 px-10 rounded-xl">B4</h1>
                             </div>
                         </div>
                     </div>
@@ -183,17 +183,18 @@
                         <h1 class=" text-black text-2xl font-semibold">Select Your Seat</h1>
                     </div>
                     <div class="bg-[#F7F8F8] inter-uniquifier rounded-2xl mt-6 p-8">
-                        <div class="text-black flex justify-around gap-24 pb-4">
-                            <h1 class="font-medium">Seat<sup class="bg-[#1DD100] text-white rounded-md px-2">0</sup> </h1>
+                        <div id="seat-container" class="text-black flex justify-around gap-24 pb-4">
+                            <h1 class="font-medium">Seat<span id="seat-number" class="bg-[#1DD100] text-white rounded-md px-2">0</span> </h1>
                             <h2 class="font-medium">Class</h2>
                             <h3 class="font-medium">Price</h3>
                         </div>
+                        <div id="selected-container"></div>
                         <div class="border-t text-black flex justify-between pt-4">
                             <h1 class="font-medium">Total Price</h1>
                             <h2 class="font-medium">BDT <span id="total">0</span> </h2>
                         </div>
-                        <div class="flex my-4">
-                            <input class="input py-5" type="text" placeholder="Have any coupon?">
+                        <div class="coupon-code flex my-4">
+                            <input id="coupon-code" class="input py-5" type="text" placeholder="Have any coupon?">
                             <button class="btn bg-[#1DD100] text-white px-[18px] py-4">Apply</button>
                         </div>
                         <div class="text-black flex justify-between">
