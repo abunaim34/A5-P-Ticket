@@ -22,6 +22,7 @@ for(const seat of allSeat){
 
        const div = document.createElement('div');
        div.style.display = 'flex'
+       div.style.justifyContent = 'space-between'
        div.classList.add('seat-container')
        const p3 = document.createElement('p')
        const p4 = document.createElement('p')
@@ -54,6 +55,7 @@ function updateGrandTotal(check){
     const total = document.getElementById("total").innerText;
     const convertedTotal = parseInt(total)
     const couponCode = document.getElementById('coupon-code').value;
+    
     if(check){
         if (couponCode == "Couple 20") {
             const discount = convertedTotal * 20 / 100;
