@@ -12,6 +12,7 @@ for(const seat of allSeat){
         const price = parseInt(p2.innerText);
         const selectedContainer = document.getElementById('selected-container');
         
+        // event.target.setAttribute("disabled", true);
 
         if(getElementById('seats-left') - 0 < 0 || getElementById('seat-number') + 1 > 4){
             event.target.setAttribute("disabled");
