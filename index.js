@@ -60,21 +60,24 @@ function updateGrandTotal(check){
     const couponCode = document.getElementById('coupon-code').value;
     
     if(check){
-        if (couponCode == "coupn20") {
-            const discount = convertedTotal * 0.2;
+        if (couponCode == "Couple 20") {
+            const discount = convertedTotal * 20 / 100;
             document.getElementById("grand-total").innerText =
-              convertedTotal - discount;
-          } else {
+            convertedTotal - discount;
+        }else if(couponCode == "NEW15"){
+            const discount = convertedTotal * 15 / 100;
+            document.getElementById('grand-total').innerText = 
+            convertedTotal - discount;
+        }
+        else {
             alert("Invalid Coupon Code No Discount");
             return;
           }
-    }
+        }
     else{
         document.getElementById("grand-total").innerText = convertedTotal;
     }
 }
-
-
 
 function updateSeatLeft(){
     const defaultLeft = document.getElementById("seats-left").innerText;
