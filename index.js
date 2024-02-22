@@ -13,10 +13,8 @@ for(const seat of allSeat){
         const selectedContainer = document.getElementById('selected-container');
         
 
-        event.target.setAttribute("disabled", false);
-
         if(getElementById('seats-left') - 0 < 0 || getElementById('seat-number') + 1 > 4){
-            alert('your limit is full');
+            event.target.setAttribute("disabled");
         }
 
         event.target.style.backgroundColor = '#1DD100';
