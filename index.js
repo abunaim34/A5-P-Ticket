@@ -54,29 +54,27 @@ function updateTotalCost(price){
     document.getElementById("total").innerText = sum;
 }
 
-// function updateGrandTotal(control){
-//     const total = document.getElementById("total").innerText;
-//     const convertedTotal = parseInt(total)
-//     const couponCode = document.getElementById('coupon-code').value;
+function updateGrandTotal(check){
+    const total = document.getElementById("total").innerText;
+    const convertedTotal = parseInt(total)
+    const couponCode = document.getElementById('coupon-code').value;
     
-//     if(control){
-//         if (couponCode == "Hero20") {
-//             const discount = convertedTotal * 0.2;
-//             document.getElementById("grand-total").innerText =
-//               convertedTotal - discount;
-//           } else {
-//             alert("Invalid Coupon Code No Discount");
-//             return;
-//           }
-//     }
-//     else{
-//         document.getElementById("grand-total").innerText = convertedTotal;
-//     }
-// }
-
-function updateGrandTotal(status){
-    console.log(status)
+    if(check){
+        if (couponCode == "coupn20") {
+            const discount = convertedTotal * 0.2;
+            document.getElementById("grand-total").innerText =
+              convertedTotal - discount;
+          } else {
+            alert("Invalid Coupon Code No Discount");
+            return;
+          }
+    }
+    else{
+        document.getElementById("grand-total").innerText = convertedTotal;
+    }
 }
+
+
 
 function updateSeatLeft(){
     const defaultLeft = document.getElementById("seats-left").innerText;
