@@ -1,28 +1,26 @@
 const allSeat = document.getElementsByClassName("seats");
-// console.log(allSeat)
 
 for(const seat of allSeat){
     seat.addEventListener('click', function(event){
-        const name = event.target.innerText
+        const name = event.target.innerText;
         const p = document.createElement('p')
-        p.innerText = 'Economoy'
+        p.innerText = 'Economoy';
         const p2 = document.createElement('p')
-        p2.innerText = '550'
+        p2.innerText = '550';
 
-        const category = p.innerText
-        const price = parseInt(p2.innerText)
-        const selectedContainer = document.getElementById('selected-container')
-        // console.log(category , price, selectedContainer)
-        // console.log(typeof price)
+        const category = p.innerText;
+        const price = parseInt(p2.innerText);
+        const selectedContainer = document.getElementById('selected-container');
+        
 
         event.target.setAttribute("disabled", false);
 
         if(getElementById('seats-left') - 0 < 0 || getElementById('seat-number') + 1 > 4){
-            alert('your limit is full')
+            alert('your limit is full');
         }
 
-        event.target.style.backgroundColor = '#1DD100'
-        event.target.style.color = 'white'
+        event.target.style.backgroundColor = '#1DD100';
+        event.target.style.color = 'white';
 
        const div = document.createElement('div');
        div.style.display = 'flex'
@@ -58,25 +56,29 @@ function updateGrandTotal(check){
     const total = document.getElementById("total").innerText;
     const convertedTotal = parseInt(total)
     const couponCode = document.getElementById('coupon-code').value;
-    
     if(check){
         if (couponCode == "Couple 20") {
             const discount = convertedTotal * 20 / 100;
             document.getElementById("grand-total").innerText =
             convertedTotal - discount;
+            hideElementById('input-field')
         }else if(couponCode == "NEW15"){
             const discount = convertedTotal * 15 / 100;
             document.getElementById('grand-total').innerText = 
             convertedTotal - discount;
+            hideElementById('input-field')
         }
         else {
             alert("Invalid Coupon Code No Discount");
+            hideElementById('input-field')
             return;
           }
         }
     else{
         document.getElementById("grand-total").innerText = convertedTotal;
+    
     }
+    
 }
 
 function updateSeatLeft(){
@@ -89,6 +91,11 @@ function updateSeatNumber(){
     const defaultSeatCount = document.getElementById("seat-number").innerText;
     const convertDefaultSeatCountc = parseInt(defaultSeatCount);
     document.getElementById("seat-number").innerText = convertDefaultSeatCountc + 1;
+}
+
+function hideElementById(elementId){
+    const element = document.getElementById(elementId)
+    element.classList.add('hidden')
 }
 
 function getElementById(id){
